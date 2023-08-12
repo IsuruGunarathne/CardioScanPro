@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np, os, sys
 from scipy.io import loadmat
 import plotly.express as px
 
@@ -104,7 +103,9 @@ if mat_file is not None:
     st.plotly_chart(fig)
 
 
-# read the header file and convert to dataframe
+# read the header file and print data
+
 if hea_file is not None:
+    st.write("Header file data")
     header_info = read_hea_file(hea_file)
     st.write(header_info)
