@@ -119,3 +119,57 @@ def read_heads(dir_path):
                 both.append([freq,points])
         
     return freq_array,pts_array,both
+
+
+#===================================================================================================
+
+def create_anomalies_array(data):
+    """
+    This function will take a .csv file as the input.
+    It will create a array containing all the anomalies
+    """
+    anomalies_array = []
+    
+    for index,row in data.iterrows():
+        anomalies_array.append(row['SNOMED CT Code'])
+    
+    return anomalies_array
+
+#===================================================================================================
+
+def create_single_output_array(array,anomalies):
+    """
+    This will take the anomalies array and the array of anomalies of a patient
+    This will output an array conatinimg binary values.
+    It represents the 1 when a patient has the relavent anomaly , otherwise 0
+    """
+    data = create_anomalies_array(anomalies)
+    
+    for i in range(len(data)):
+        if(data[i] in array):
+            data[i] = 1
+        else:
+            data[i] = 0
+    return data
+
+#===================================================================================================
+
+def create_output_array(df,anomalies):
+    """
+    This will take anomalies array and a data frame as the input
+    This will output the Y data set 
+    """
+    Y = []
+    
+    for index,row in df.iterrows():
+        # Create the anomalies array for the relavent row
+        # --------code here---------
+        array = []
+        
+        output = create_single_output_array(array,anomalies)
+        Y.append(output)
+        
+    return np.array(Y)
+
+
+#===================================================================================================
