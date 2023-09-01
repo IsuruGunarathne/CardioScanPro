@@ -5,6 +5,7 @@ import seaborn as sns
 import pandas as pd
 import pathlib as pl
 import numpy as np
+import random
 
 #=====================================================================================================
 
@@ -19,38 +20,60 @@ def read_heafile(file_name):
 
 #====================================================================================================
 
-def create_array(head_file):
-    # this function will create an array of the data in the .hea file
-
-    content = read_heafile(head_file)
-    ID = content[0].strip('\n').split()[0]
-    age = int(content[13].strip('\n').split()[2])
-    gender = content[14].strip('\n').split()[2]
-    abormalities = content[15].strip('\n').split()[2]
+def create_array(hea_content):
+    ID = hea_content[0].strip().split()[0]
     
-    return [ID,age,gender,abormalities]
+    # Extract 'Age' from .hea file content
+    age_info = hea_content[13].strip().split()
+    age = int(age_info[2]) if len(age_info) > 2 and age_info[2].isdigit() else 0
+    
+    # Extract 'Gender' from .hea file content
+    gender = hea_content[14].strip().split()[2] if len(hea_content) > 14 else 'Unknown'
+    
+    # Extract 'Abnormality' from .hea file content
+    abnormality = hea_content[15].strip().split()[2] if len(hea_content) > 15 else 'Unknown'
+    
+    return [ID, age, gender, abnormality]
 
 #===================================================================================================
-def create_df(dir_path):
-    # this function will build a data frame using the .hea files in a given directory
+def create_dataframes(training_directory):
+    dataframes = {}
+
+    subdirectories = [subdir for subdir in pl.Path(training_directory).iterdir() if subdir.is_dir()]
     
-    # Initializing the data frame
-    df = pd.DataFrame(columns = ['ID','Age','Gender','Abnormality'])
-    
-    # Iterating through the subdirectories inside the given directory
-    for subdir in pl.Path(dir_path).iterdir():
-        if subdir.is_dir():
-            
-            data_dir = pl.Path(subdir)
-            file_list = list(data_dir.glob('*.hea'))
-    
-            for file in file_list:
-                file_path = data_dir.joinpath(file.name)
-                print(file_path)
-                data = create_array(file_path)
-                df.loc[len(df)] = data
+    for source_folder_path in subdirectories:
+        source_folder_name = source_folder_path.name
+        columns = ['ID', 'Age', 'Gender', 'Abnormality']
+        source_dataframe = pd.DataFrame(columns=columns)
+        patient_data = {}  # To collect patient information
         
-    return df
+        for subdir in source_folder_path.iterdir():
+            if subdir.is_dir():
+                data_dir = pl.Path(subdir)
+                header_files = list(data_dir.glob('*.hea'))
+
+                for header_file in header_files:
+                    header_path = data_dir.joinpath(header_file.name)
+                    hea_content = read_heafile(header_path)
+                    patient_info = create_array(hea_content)
+                    patient_id = patient_info[0]
+                    
+                    # Collect patient information
+                    for i, column_name in enumerate(['Age', 'Gender', 'Abnormality']):
+                        patient_data.setdefault(patient_id, {})[column_name] = patient_info[i + 1]
+                        
+        # Create a list of patient data dictionaries
+        patient_rows = []
+        for patient_id, info in patient_data.items():
+            row = {'ID': patient_id, 'Age': info.get('Age'), 'Gender': info.get('Gender'), 'Abnormality': info.get('Abnormality')}
+            patient_rows.append(row)
+            
+        # Concatenate patient data into the dataframe
+        source_dataframe = pd.concat([source_dataframe, pd.DataFrame(patient_rows)])
+        
+        dataframes[f'{source_folder_name}_df'] = source_dataframe
+        
+    return dataframes
 
 
 #===================================================================================================
@@ -170,6 +193,84 @@ def create_output_array(df,anomalies):
         Y.append(output)
         
     return np.array(Y)
+
+
+#===================================================================================================
+
+def create_y_array(df,data,source_file):
+    """
+    This function will take a dataframe(heads),csv of anomalies and a list of source files
+    This will output the Y array for the given source files(Y array is the array conatining training labels)
+    """
+    Y = []
+    for ele in source_file:
+        y = create_output_array(df[ele],data)
+        Y = Y + y
+    return Y
+
+#===================================================================================================
+
+def create_x_array(source_file):
+    """
+    This function will take a list of source files
+    This will output the X array for the given source files(X array is the array conatining training X data)
+    """
+
+    X = []
+    lengths = []
+    for ele in source_file:
+        length,array = normalize_mats('training/' + ele)
+        lengths = lengths + length
+        X = X + array
+    return X,lengths
+
+
+#===================================================================================================
+
+def equalizing_wave_array(x_copy):
+    """
+    This function will take the X array and equalize the length of the waves
+    """
+    x_copy_new = []
+    for ele in x_copy:
+    
+        size = len(ele[0])
+
+        # If the size of the teh array is less than 2617 it will add noice at the end and begining 
+        if(size < 2617):
+        
+            start = round((2617 - size)/2)
+            end = 2617 - size - start
+        
+            new_array = []
+        
+            for data in ele:
+
+                lower_bound,upper_bound = min(data),max(data)
+            
+                start_list = [random.randint(lower_bound, upper_bound) for _ in range(start)]
+                end_list = [random.randint(lower_bound, upper_bound) for _ in range(end)]
+            
+                new_sub_array = np.array(start_list + list(data) + end_list)
+                new_array.append(new_sub_array)
+   
+            x_copy_new.append(new_array)
+        
+        # Else it will simmply catoff the extra part from the begining and the end
+        else:
+            extra = size - 2617
+            half_extra = round(extra)
+        
+            new_array = []
+        
+            for data in ele:
+                new_sub_array = list(data)[(half_extra-1):(half_extra + 2616)]
+                new_array.append(new_sub_array)
+            x_copy_new.append(new_array)
+
+
+    return x_copy_new
+
 
 
 #===================================================================================================
