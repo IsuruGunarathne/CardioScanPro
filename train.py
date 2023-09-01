@@ -59,3 +59,7 @@ resnet_model = mdl.ResNet_model(input_shape,num_classes)
 
 # Training the model
 trained_model,accuracy_results_loss_results = mdl.model_train(X_train,y_train,resnet_model,5,15)
+
+
+# Saving the model
+trained_model.save('CardioScanPro_resnet_model.h5')
