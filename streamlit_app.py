@@ -2,17 +2,31 @@ import streamlit as st
 import pandas as pd
 from scipy.io import loadmat
 import plotly.express as px
+import utils
+import tensorflow as tf
+from tensorflow.keras.layers import Input, Conv1D, BatchNormalization, Activation, GlobalAveragePooling1D, Dense
+from tensorflow.keras.models import Model
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.model_selection import StratifiedKFold,KFold
+from tensorflow.keras.models import load_model
 
 # Title
 st.title("Cardio Scan Pro")
 st.write("This is Cardio Scan Pro")
 
 
+# anomalies df
+anomalies_df = pd.read_csv('Dx_map.csv')
+
 # Function definitions
 def read_hea_file(file):
     header_info = file.readlines()
 
     return header_info
+
+# Table sketch
+
 
 
 # File Uploaders
@@ -46,11 +60,12 @@ hea_file = st.file_uploader(
 )
 
 # read the file and convert to dataframe
-if mat_file is not None:
+if mat_file is not None and hea_file is not None:
     data = loadmat(mat_file)
     df = pd.DataFrame(data["val"])
     st.write(df)
 
+    array = data["val"]
     # the data contains 12 time series, each with 7500 data points
     # plot the first 1000 data points of the first time series
 
@@ -103,9 +118,23 @@ if mat_file is not None:
     st.plotly_chart(fig)
 
 
-# read the header file and print data
+    # read the header file and print data
 
-if hea_file is not None:
     st.write("Header file data")
     header_info = read_hea_file(hea_file)
+    freq = int(header_info[0].split()[2])
     st.write(header_info)
+
+
+    model = load_model('CardioScanPro_model_light_weight.h5')
+
+    processed_array = utils.process_input(array, freq)
+    res1 = model.predict(processed_array)
+    df_probs = utils.get_best_(list(res1[0]), anomalies_df)
+
+    # Result heading
+    st.header("Results")
+
+    # Display the table
+    st.table(df_probs)
+
