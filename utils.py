@@ -7,6 +7,7 @@ import pathlib as pl
 import numpy as np
 import random
 
+
 #=====================================================================================================
 
 def read_heafile(file_name):
@@ -274,3 +275,68 @@ def equalizing_wave_array(x_copy):
 
 
 #===================================================================================================
+
+def process_input(array,freq):
+
+    """
+    This function will process the input so that it could be fed in to the model and do the prediction
+    When the input array and the frequency is given it will return a array of size (1,12,2617) by
+    Normalizing and Reshaping the wave
+    """
+    
+    size,normlaized_wave = normalize_wave(array,250,freq)
+    
+    
+    if(size < 2617):
+        
+        start = round((2617 - size)/2)
+        end = 2617 - size - start
+        
+        new_array = []
+        for data in normlaized_wave:
+            
+            lower_bound,upper_bound = min(data),max(data)
+            
+            start_list = [random.randint(lower_bound, upper_bound) for _ in range(start)]
+            end_list = [random.randint(lower_bound, upper_bound) for _ in range(end)]
+            
+            new_sub_array = np.array(start_list + list(data) + end_list)
+            new_array.append(new_sub_array)
+   
+        return np.expand_dims(np.array(new_array),axis = 0)
+    else:
+        
+        extra = size - 2617
+        half_extra = round(extra/2)
+        
+        new_array = []
+        
+        for data in normlaized_wave:
+            new_sub_array = list(data)[(half_extra-1):(half_extra + 2616)]
+            new_array.append(new_sub_array)
+        
+        return np.expand_dims(np.array(new_array),axis = 0)
+    
+
+#===================================================================================================
+
+def get_best_(array,df):
+    table_data = {
+        'Abnormality' : [],
+        'SNOMED CT Code' : [],
+        'Abbrevation' : [],
+        'Probability' : []
+    }
+
+    sorted_array = sorted(array)[::-1]
+    for ele in sorted_array[0:9]:
+        index = array.index(ele)
+        row_data = df.iloc[index]
+        table_data['Abnormality'].append(row_data['Dx'])
+        table_data['SNOMED CT Code'].append(row_data['SNOMED CT Code'])
+        table_data['Abbrevation'].append(row_data['Abbreviation'])
+        table_data['Probability'].append(ele)
+
+    df = pd.DataFrame(table_data)
+
+    return df
