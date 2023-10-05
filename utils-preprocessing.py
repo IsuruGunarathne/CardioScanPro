@@ -79,7 +79,6 @@ def create_dataframes(training_directory):
         
     return dataframes
 
-
 def preprocess_dataframes(result_dataframes):
     cpsc_2018_df = result_dataframes['cpsc_2018_df']
     cpsc_2018_extra_df = result_dataframes['cpsc_2018_extra_df']
@@ -90,16 +89,57 @@ def preprocess_dataframes(result_dataframes):
 
     dataframes = [cpsc_2018_df, cpsc_2018_extra_df, georgia_df, ptb_df, ptb_xl_df, st_petersburg_incart_df]
 
-    # Identify age values less than 0 and greater than 100
-    invalid_age_indices = (ptb_xl_df['Age'] < 0) | (ptb_xl_df['Age'] > 100)
-
     # Replace invalid age values with NaN (preidentified that outliers are only in ptb_xl_df dataframe)
+    invalid_age_indices = ptb_xl_df['Age'] == 300
     ptb_xl_df.loc[invalid_age_indices, 'Age'] = np.nan
+
+    # Replace placeholders with NaN
+    for df in dataframes:
+        df['Age'] = df['Age'].replace(0, np.nan)
+        df['Gender'] = df['Gender'].replace('Unknown', np.nan)
+        df['Abnormality'] = df['Abnormality'].replace('Unknown', np.nan)
 
     return dataframes
 
 # Assuming you have already created the 'result_dataframes' dictionary
-# Call the preprocess_dataframes function to preprocess the dataframes
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
+
+def fill_missing_ages_with_regression(df):
+    # Create a copy of the dataframe to modify
+    df['Age'] = pd.to_numeric(df['Age'], errors='coerce')
+    df_copy = df.copy()
+    
+    # Create a one-hot encoded matrix for 'Abnormality'
+    encoder = OneHotEncoder()
+    abnormality_encoded = encoder.fit_transform(df_copy['Abnormality'].values.reshape(-1, 1)).toarray()
+    
+    # Define features and target variables
+    X = abnormality_encoded
+    y = df_copy['Age']
+    
+    # Identify rows with missing 'Age' values
+    missing_age_indices = np.isnan(y)
+    
+    if np.sum(missing_age_indices) == 0:
+        return df  # Skip if there are no missing 'Age' values
+    
+    # Build a linear regression model
+    regressor = LinearRegression()
+    regressor.fit(X[~missing_age_indices], y[~missing_age_indices])
+    
+    # Fill missing 'Age' values using the regression model
+    for index, row in df.iterrows():
+        if np.isnan(row['Age']):
+            abnormality = row['Abnormality']
+            abnormality_encoded = encoder.transform(np.array(abnormality).reshape(1, -1)).toarray()
+            predicted_age = regressor.predict(abnormality_encoded)[0]
+            df.loc[index, 'Age'] = predicted_age
+    
+    return df
+
+# Assuming 'result_dataframes' is a dictionary of DataFrames
+# You can call this function for each DataFrame in the dictionary
 
 
 
