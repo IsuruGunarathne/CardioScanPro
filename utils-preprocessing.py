@@ -80,3 +80,33 @@ def create_dataframes(training_directory):
     return dataframes
 
 
+def preprocess_dataframes(result_dataframes):
+    cpsc_2018_df = result_dataframes['cpsc_2018_df']
+    cpsc_2018_extra_df = result_dataframes['cpsc_2018_extra_df']
+    georgia_df = result_dataframes['georgia_df']
+    ptb_df = result_dataframes['ptb_df']
+    ptb_xl_df = result_dataframes['ptb-xl_df']
+    st_petersburg_incart_df = result_dataframes['st_petersburg_incart_df']
+
+    dataframes = [cpsc_2018_df, cpsc_2018_extra_df, georgia_df, ptb_df, ptb_xl_df, st_petersburg_incart_df]
+
+    # Identify age values less than 0 and greater than 100
+    invalid_age_indices = (ptb_xl_df['Age'] < 0) | (ptb_xl_df['Age'] > 100)
+
+    # Replace invalid age values with NaN (preidentified that outliers are only in ptb_xl_df dataframe)
+    ptb_xl_df.loc[invalid_age_indices, 'Age'] = np.nan
+
+    return dataframes
+
+# Assuming you have already created the 'result_dataframes' dictionary
+# Call the preprocess_dataframes function to preprocess the dataframes
+
+
+
+
+
+
+
+
+
+
