@@ -4,11 +4,18 @@ from scipy.io import loadmat
 import plotly.express as px
 import utils
 import tensorflow as tf
-from tensorflow.keras.layers import Input, Conv1D, BatchNormalization, Activation, GlobalAveragePooling1D, Dense
+from tensorflow.keras.layers import (
+    Input,
+    Conv1D,
+    BatchNormalization,
+    Activation,
+    GlobalAveragePooling1D,
+    Dense,
+)
 from tensorflow.keras.models import Model
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import EarlyStopping
-from sklearn.model_selection import StratifiedKFold,KFold
+from sklearn.model_selection import StratifiedKFold, KFold
 from tensorflow.keras.models import load_model
 
 # Title
@@ -17,7 +24,8 @@ st.write("This is Cardio Scan Pro")
 
 
 # anomalies df
-anomalies_df = pd.read_csv('Dx_map.csv')
+anomalies_df = pd.read_csv("Dx_map.csv")
+
 
 # Function definitions
 def read_hea_file(file):
@@ -25,8 +33,8 @@ def read_hea_file(file):
 
     return header_info
 
-# Table sketch
 
+# Table sketch
 
 
 # File Uploaders
@@ -63,7 +71,7 @@ hea_file = st.file_uploader(
 if mat_file is not None and hea_file is not None:
     data = loadmat(mat_file)
     df = pd.DataFrame(data["val"])
-    st.write(df)
+    # st.write(df)
 
     array = data["val"]
     # the data contains 12 time series, each with 7500 data points
@@ -117,24 +125,43 @@ if mat_file is not None and hea_file is not None:
     fig = px.line(df.iloc[11, 0:1000])
     st.plotly_chart(fig)
 
-
     # read the header file and print data
 
-    st.write("Header file data")
+    # st.write("Header file data")
     header_info = read_hea_file(hea_file)
     freq = int(header_info[0].split()[2])
-    st.write(header_info)
+    age = int(header_info[13].split()[-1])
+    sex = str(header_info[14].split()[-1])
+    sex = sex[2:-1]
+    # st.write(header_info)
 
-
-    model = load_model('CardioScanPro_model_light_weight.h5')
+    model = load_model("CardioScanPro_model_light_weight.h5")
 
     processed_array = utils.process_input(array, freq)
     res1 = model.predict(processed_array)
     df_probs = utils.get_best_(list(res1[0]), anomalies_df)
 
-    # Result heading
-    st.header("Results")
+    # Patient details
+    output = "The patient is a " + str(age) + " year old " + sex
+    st.header(output)
 
+    # Result heading
+    st.header("Results of the ECG scan")
     # Display the table
     st.table(df_probs)
 
+    # Insights
+    st.header("Insights")
+    st.write(
+        "The patient is most likely suffering from suffering from "
+        + str(df_probs.iloc[0, 0])
+        + " ("
+        + str(int(df_probs.iloc[0, 1]))
+        + "/"
+        + str(df_probs.iloc[0, 2])
+        + ")"
+        + "."
+        + " The exact probability is about "
+        + str(round((df_probs.iloc[0, 3] * 100), 2))
+        + "%"
+    )
