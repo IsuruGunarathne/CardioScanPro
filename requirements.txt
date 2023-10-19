@@ -4,3 +4,6 @@ scikit-learn
 streamlit
 scipy
 plotly
+matplotlib
+seaborn
+tensorflow
