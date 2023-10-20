@@ -1,5 +1,5 @@
 Dx,SNOMED CT Code,Abbreviation,Description,Link
-1st degree av block,270492004,IAVB,,
+1st degree av block,270492004,IAVB,First-degree atrioventricular (AV) block is a type of heart block where the electrical conduction between the atria and the ventricles is delayed. This delay is consistent and every atrial impulse is conducted to the ventricles but with a prolonged PR interval on an electrocardiogram (ECG). The delay in conduction is usually at the level of the AV node resulting in a lengthened PR interval on the ECG but all the atrial impulses eventually reach the ventricles. While first-degree AV block is often asymptomatic and benign it can sometimes be associated with conditions such as coronary artery disease myocarditis or medications that affect the conduction system of the heart.,https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/atrioventricular-av-block
 2nd degree av block,195042002,IIAVB,,
 abnormal QRS,164951009,abQRS,,
 accelerated junctional rhythm,426664006,AJR,,
