@@ -1,112 +1,124 @@
-Dx,SNOMED CT Code,Abbreviation
-1st degree av block,270492004,IAVB
-2nd degree av block,195042002,IIAVB
-abnormal QRS,164951009,abQRS
-accelerated junctional rhythm,426664006,AJR
-acute myocardial infarction,57054005,AMI
-acute myocardial ischemia,413444003,AMIs
-anterior ischemia,426434006,AnMIs
-anterior myocardial infarction,54329005,AnMI
-atrial bigeminy,251173003,AB
-atrial fibrillation,164889003,AF
-atrial fibrillation and flutter,195080001,AFAFL
-atrial flutter,164890007,AFL
-atrial hypertrophy,195126007,AH
-atrial pacing pattern,251268003,AP
-atrial tachycardia,713422000,ATach
-atrioventricular junctional rhythm,29320008,AVJR
-av block,233917008,AVB
-blocked premature atrial contraction,251170000,BPAC
-brady tachy syndrome,74615001,BTS
-bradycardia,426627000,Brady
-bundle branch block,6374002,BBB
-cardiac dysrhythmia,698247007,CD
-chronic atrial fibrillation,426749004,CAF
-chronic myocardial ischemia,413844008,CMI
-complete heart block,27885002,CHB
-complete right bundle branch block,713427006,CRBBB
-congenital incomplete atrioventricular heart block,204384007,CIAHB
-coronary heart disease,53741008,CHD
-decreased qt interval,77867006,SQT
-diffuse intraventricular block,82226007,DIB
-early repolarization,428417006,ERe
-fusion beats,13640000,FB
-heart failure,84114007,HF
-heart valve disorder,368009,HVD
-high t-voltage,251259000,HTV
-idioventricular rhythm,49260003,IR
-incomplete left bundle branch block,251120003,ILBBB
-incomplete right bundle branch block,713426002,IRBBB
-indeterminate cardiac axis,251200008,ICA
-inferior ischaemia,425419005,IIs
-inferior ST segment depression,704997005,ISTD
-junctional escape,426995002,JE
-junctional premature complex,251164006,JPC
-junctional tachycardia,426648003,JTach
-lateral ischaemia,425623009,LIs
-left anterior fascicular block,445118002,LAnFB
-left atrial abnormality,253352002,LAA
-left atrial enlargement,6.7741E+13,LAE
-left atrial hypertrophy,446813000,LAH
-left axis deviation,39732003,LAD
-left bundle branch block,164909002,LBBB
-left posterior fascicular block,445211001,LPFB
-left ventricular hypertrophy,164873001,LVH
-left ventricular strain,370365005,LVS
-low qrs voltages,251146004,LQRSV
-mobitz type i wenckebach atrioventricular block,54016002,MoI
-myocardial infarction,164865005,MI
-myocardial ischemia,164861001,MIs
-nonspecific intraventricular conduction disorder,698252002,NSIVCB
-nonspecific st t abnormality,428750005,NSSTTA
-old myocardial infarction,164867002,OldMI
-pacing rhythm,10370003,PR
-paired ventricular premature complexes,251182009,VPVC
-paroxysmal atrial fibrillation,282825002,PAF
-paroxysmal supraventricular tachycardia,67198005,PSVT
-paroxysmal ventricular tachycardia,425856008,PVT
-premature atrial contraction,284470004,PAC
-premature ventricular contractions,427172004,PVC
-ventricular premature beats,17338001,VPB
-prolonged pr interval,164947007,LPR
-prolonged qt interval,111975006,LQT
-qwave abnormal,164917005,QAb
-r wave abnormal,164921003,RAb
-rapid atrial fibrillation,314208002,RAF
-right atrial abnormality,253339007,RAAb
-right atrial hypertrophy,446358003,RAH
-right axis deviation,47665007,RAD
-right bundle branch block,59118001,RBBB
-right ventricular hypertrophy,89792004,RVH
-s t changes,55930002,STC
-shortened pr interval,49578007,SPRI
-sinoatrial block,65778007,SAB
-sinus arrhythmia,427393009,SA
-sinus bradycardia,426177001,SB
-sinus node dysfunction,60423000,SND
-sinus rhythm,426783006,NSR
-sinus tachycardia,427084000,STach
-st depression,429622005,STD
-st elevation,164931005,STE
-st interval abnormal,164930006,STIAb
-supraventricular bigeminy,251168009,SVB
-supraventricular premature beats,63593006,SVPB
-supraventricular tachycardia,426761007,SVT
-suspect arm ecg leads reversed,251139008,ALR
-t wave abnormal,164934002,TAb
-t wave inversion,59931005,TInv
-transient ischemic attack,266257000,TIA
-u wave abnormal,164937009,UAb
-ventricular bigeminy,11157007,VBig
-ventricular ectopics,164884008,VEB
-ventricular escape beat,75532003,VEsB
-ventricular escape rhythm,81898007,VEsR
-ventricular fibrillation,164896001,VF
-ventricular flutter,111288001,VFL
-ventricular hypertrophy,266249003,VH
-ventricular pacing pattern,251266004,VPP
-ventricular pre excitation,195060002,VPEx
-ventricular tachycardia,164895002,VTach
-ventricular trigeminy,251180001,VTrig
-wandering atrial pacemaker,195101003,WAP
-wolff parkinson white pattern,74390002,WPW
+Dx,SNOMED CT Code,Abbreviation,Description,Link
+1st degree av block,270492004,IAVB,"First-degree atrioventricular (AV) block is a type of heart block where the electrical conduction between the atria and the ventricles is delayed. This delay is consistent, and every atrial impulse is conducted to the ventricles, but with a prolonged PR interval on an electrocardiogram (ECG). 
+
+The delay in conduction is usually at the level of the AV node, resulting in a lengthened PR interval on the ECG, but all the atrial impulses eventually reach the ventricles.
+
+While first-degree AV block is often asymptomatic and benign, it can sometimes be associated with conditions such as coronary artery disease, myocarditis, or medications that affect the conduction system of the heart.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/atrioventricular-av-block
+2nd degree av block,195042002,IIAVB,"Second-degree atrioventricular (AV) block is a type of heart block where some of the electrical impulses from the atria fail to reach the ventricles, leading to intermittent disruption of the conduction between the atria and the ventricles. This results in a dropped beat on the electrocardiogram (ECG), with a pattern of occasional non-conducted P waves.
+
+There are two types of second-degree AV block. Type 1, also known as Wenckebach or Mobitz I, is characterized by a progressively lengthening PR interval until a beat is dropped. Type 2, or Mobitz II, is characterized by a constant PR interval with occasional dropped beats without progressive lengthening.
+
+Second-degree AV block can be associated with various underlying conditions such as myocardial infarction, myocarditis, Lyme disease, and certain medications affecting the conduction system.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/atrioventricular-av-block
+abnormal QRS,164951009,abQRS,"The QRS complex is a portion of the electrocardiogram (ECG) that represents the depolarization of the ventricles. An abnormal QRS complex may indicate various cardiac conditions or abnormalities. Changes in the QRS complex can be caused by issues such as electrolyte imbalances, cardiac ischemia, myocardial infarction, conduction abnormalities, or structural heart disease. Abnormalities in the QRS complex can manifest as widened or narrowed QRS complexes, changes in the amplitude, or the presence of abnormal Q waves, among other indicators. These changes can provide valuable insights into the functioning of the heart and assist in diagnosing specific cardiac conditions.",https://www.heart.org/en/health-topics/heart-attack/diagnosing-a-heart-attack/electrocardiogram-ecg
+accelerated junctional rhythm,426664006,AJR,"Accelerated junctional rhythm is a type of cardiac arrhythmia characterized by the accelerated firing of the atrioventricular (AV) junctional tissue, leading to a heart rate ranging from 60 to 100 beats per minute. In this rhythm, the electrical impulses in the heart originate from the AV node or the surrounding tissue, bypassing the normal pathway of the heart's electrical system. This condition can result from various factors, such as digitalis toxicity, ischemic heart disease, or electrolyte imbalances, and can sometimes occur without any identifiable cause. Although it can be asymptomatic, it may lead to symptoms such as palpitations, dizziness, or fainting, depending on the underlying health of the individual. It is crucial to consult a healthcare professional for proper evaluation and management.",https://www.lecturio.com/concepts/accelerated-junctional-rhythm/
+acute myocardial infarction,57054005,AMI,"Acute myocardial infarction, commonly known as a heart attack, occurs when there is a sudden blockage of blood flow to a part of the heart muscle, leading to tissue damage or cell death due to a lack of oxygen. This critical condition often manifests with symptoms such as chest pain or discomfort, shortness of breath, nausea, lightheadedness, or cold sweats. Prompt medical attention is crucial to minimize the extent of damage and improve the chances of survival. Treatments may include medications, interventions like angioplasty or stent placement, or, in severe cases, coronary artery bypass surgery. Lifestyle changes and cardiac rehabilitation are typically recommended post-treatment to prevent future cardiovascular events.",https://www.heart.org/en/health-topics/heart-attack
+acute myocardial ischemia,413444003,AMIs,"Acute myocardial ischemia refers to a sudden decrease in blood flow to the heart muscle, leading to an insufficient oxygen supply to meet the heart's demands. This condition can result from various factors, including the narrowing of coronary arteries due to atherosclerosis, coronary artery spasm, or blood clots. The insufficient blood flow can cause chest pain or discomfort, known as angina, and if left untreated, it can progress to a heart attack. Immediate medical attention is crucial to restore blood flow and prevent further damage. Treatments may include medications, lifestyle changes, and in some cases, invasive procedures like angioplasty or coronary artery bypass grafting.",https://www.heart.org/en/health-topics/heart-attack/angina-chest-pain
+anterior ischemia,426434006,AnMIs,"Anterior ischemia refers to a condition where the front part of the heart muscle does not receive an adequate blood supply, leading to reduced oxygen delivery to this specific area. It can result from the narrowing or blockage of the left anterior descending artery, one of the main coronary arteries supplying blood to the heart. Common symptoms associated with anterior ischemia may include chest pain or discomfort, shortness of breath, and fatigue, among others. Prompt medical evaluation is essential to determine the underlying cause and to initiate appropriate treatment. Management typically involves a combination of medications, lifestyle modifications, and, in some cases, revascularization procedures to restore blood flow to the affected area.",https://www.heart.org/en/health-topics/heart-attack/angina-chest-pain
+anterior myocardial infarction,54329005,AnMI,"Anterior myocardial infarction is a specific type of heart attack that occurs when there is a blockage in the blood supply to the front part of the heart, typically affecting the left ventricle. This critical condition can lead to severe damage to the heart muscle, potentially resulting in life-threatening complications. Common symptoms associated with anterior myocardial infarction include sudden and intense chest pain or discomfort, shortness of breath, nausea, and lightheadedness. Immediate medical intervention is crucial to restore blood flow and minimize the extent of heart muscle damage. Treatments may include medications, interventions like angioplasty or stent placement, and cardiac rehabilitation programs to support recovery and prevent future cardiovascular events.",https://www.heart.org/en/health-topics/heart-attack
+atrial bigeminy,251173003,AB,"Atrial bigeminy is a specific cardiac arrhythmia characterized by abnormal electrical activity in the heart, resulting in a pattern where every normal heartbeat is followed by a premature atrial contraction. This irregular rhythm can create a sensation of a skipped heartbeat or palpitations. While it may not always cause significant symptoms, it can sometimes lead to feelings of fluttering in the chest or discomfort. Atrial bigeminy can be associated with various factors, including excessive stress, stimulants, electrolyte imbalances, or certain heart conditions. Monitoring and, if necessary, consultation with a healthcare professional are recommended to evaluate the underlying cause and determine the appropriate management approach.",https://www.heartrhythmalliance.org/aa/us/bigeminy
+atrial fibrillation,164889003,AF,"Atrial fibrillation is a common type of cardiac arrhythmia characterized by an irregular and often rapid heartbeat. During atrial fibrillation, the heart's upper chambers (the atria) quiver instead of beating effectively, leading to inefficient blood pumping. This condition can result in various symptoms, including palpitations, shortness of breath, weakness, and fatigue. Atrial fibrillation can increase the risk of complications such as stroke, heart failure, and other heart-related complications. Treatment options may include medications to control heart rate and rhythm, blood thinners to reduce the risk of stroke, and in some cases, procedures like cardioversion or catheter ablation to restore normal heart rhythm.",https://www.heart.org/en/health-topics/atrial-fibrillation
+atrial fibrillation and flutter,195080001,AFAFL,"Atrial fibrillation and flutter are both types of cardiac arrhythmias that involve irregularities in the heart's rhythm. Atrial fibrillation is characterized by a rapid, irregular heartbeat, while atrial flutter involves a rapid but regular heartbeat. Both conditions originate from abnormal electrical activity in the heart's upper chambers (the atria). They can lead to symptoms such as palpitations, shortness of breath, weakness, and fatigue. Additionally, they can increase the risk of complications such as stroke, heart failure, and other cardiac-related issues. Management strategies may include medications, procedures to restore normal heart rhythm, and lifestyle modifications to reduce associated risks.",https://www.heart.org/en/health-topics/atrial-fibrillation
+atrial flutter,164890007,AFL,"Atrial flutter is a type of cardiac arrhythmia characterized by a rapid and regular heartbeat originating from the heart's upper chambers (the atria). During atrial flutter, the electrical signals within the heart's atria fire in a fast and organized pattern, leading to a characteristic saw-tooth appearance on an electrocardiogram (ECG). This condition can result in symptoms such as palpitations, shortness of breath, and weakness. Atrial flutter may be associated with various underlying factors, including heart disease, surgery, or other medical conditions. Management may involve medications to control heart rate and rhythm, as well as procedures such as cardioversion or catheter ablation to restore normal heart function.",https://www.heart.org/en/health-topics/atrial-fibrillation
+atrial hypertrophy,195126007,AH,"Atrial hypertrophy refers to an abnormal enlargement or thickening of the heart's upper chambers, known as the atria. This condition can occur as a response to various factors, including underlying heart conditions such as high blood pressure, heart valve disease, or other structural heart issues. Atrial hypertrophy can sometimes be asymptomatic, but it may also lead to symptoms such as palpitations, shortness of breath, and fatigue, depending on the severity and underlying cause. Managing the underlying condition is crucial in the treatment of atrial hypertrophy, and treatment may include medications, lifestyle changes, and in some cases, surgical interventions.",https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3080631/
+atrial pacing pattern,251268003,AP,"Atrial pacing pattern refers to the electrical stimulation of the heart's atria through an artificial pacemaker to regulate the heart's rhythm and ensure proper functioning. This technique involves the delivery of electrical impulses to the atria, helping to coordinate the heart's contractions and maintain an appropriate heart rate. Atrial pacing patterns can vary depending on the specific pacing mode programmed into the pacemaker device, and they can be tailored to the individual's specific cardiac needs. These pacing patterns are often used in the management of various cardiac conditions, including bradycardia, atrioventricular block, and other arrhythmias.",https://www.hrsonline.org/News/EP-Resources-and-Content/clinical-resources/Atrial-Pacing
+atrial tachycardia,713422000,ATach,"Atrial tachycardia is a type of cardiac arrhythmia characterized by a rapid heartbeat originating from the heart's upper chambers, the atria. This condition involves abnormal electrical signals that lead to an accelerated heart rate, typically exceeding 100 beats per minute. Atrial tachycardia can manifest with symptoms such as palpitations, shortness of breath, dizziness, and chest discomfort. It can be caused by various factors, including underlying heart conditions, electrolyte imbalances, or the use of certain medications. Treatment options may include medications to control heart rate and rhythm, as well as procedures such as catheter ablation to restore normal heart function.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia
+atrioventricular junctional rhythm,29320008,AVJR,"Atrioventricular junctional rhythm is a type of cardiac rhythm originating near the atrioventricular (AV) node, a specialized group of cells in the heart that coordinates the electrical signals between the atria and ventricles. In this rhythm, the electrical impulses bypass the heart's normal pacemaker, the sinoatrial node, and originate from the AV node or the surrounding tissues. Atrioventricular junctional rhythm can result in a heart rate ranging from 40 to 60 beats per minute and may be associated with various conditions such as heart disease, electrolyte imbalances, or the use of certain medications. Management typically involves identifying and addressing the underlying cause of the rhythm disturbance.",https://www.acls.com/free-resources/knowledge-base/arrhythmia/av-nodal-dysfunction
+av block,233917008,AVB,"AV block, or atrioventricular block, refers to a type of cardiac conduction disorder that occurs when the electrical signals between the heart's upper chambers (the atria) and lower chambers (the ventricles) are delayed or interrupted. This condition can manifest in varying degrees, ranging from first-degree AV block, where the conduction delay is mild, to third-degree AV block, where there is a complete blockage of the electrical signals. AV block can be caused by various factors, including heart disease, aging, medication side effects, or congenital heart conditions. Treatment options may include medications, pacemaker implantation, or other interventions to manage the underlying cause and restore the heart's normal rhythm.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/atrioventricular-av-block
+blocked premature atrial contraction,251170000,BPAC,"Blocked premature atrial contraction refers to an interruption or non-transmission of a premature electrical impulse originating from the atria to the ventricles. This condition can occur due to a delay or blockage in the heart's electrical conduction system, resulting in the failure of the premature atrial contraction to reach the ventricles. While it may not always cause significant symptoms, it can sometimes lead to sensations of palpitations or irregular heartbeats. Evaluation by a healthcare professional is essential to determine the underlying cause and to assess the need for any further treatment or management.",consult with your healthcare provider for personalized information and guidance.
+brady tachy syndrome,74615001,BTS,"Brady-Tachy syndrome, also known as tachy-brady syndrome, is a cardiac arrhythmia condition characterized by alternating periods of bradycardia (slow heart rate) and tachycardia (fast heart rate). This syndrome typically involves periods of abnormally slow heart rhythms, often followed by sudden episodes of rapid heart rates. The condition can lead to symptoms such as dizziness, fainting, palpitations, and fatigue, depending on the heart rate fluctuations. Treatment may involve the use of medications, implantation of a pacemaker or other cardiac devices, and in some cases, catheter ablation to manage the arrhythmias and maintain a stable heart rate.",it is recommended to consult a healthcare professional or refer to reputable medical resources for further understanding and guidance.
+bradycardia,426627000,Brady,"Bradycardia is a heart condition characterized by an abnormally slow heart rate, typically fewer than 60 beats per minute. While it may not always cause noticeable symptoms, it can sometimes lead to feelings of dizziness, lightheadedness, fainting, fatigue, or shortness of breath, especially during physical activity. Bradycardia can be caused by various factors, including underlying heart conditions, aging, certain medications, or imbalances in the body's electrolytes. Treatment options may include addressing the underlying cause, adjusting medications, or, in some cases, the implantation of a pacemaker to regulate the heart rate.",https://www.heart.org/en/health-topics/arrhythmia/symptoms-diagnosis--monitoring-of-arrhythmia/bradycardia--slow-heart-rate
+bundle branch block,6374002,BBB,"Bundle branch block is a cardiac conduction disorder that occurs when there is a delay or blockage of electrical impulses along the heart's bundle branches, which are responsible for conducting signals to the ventricles. This condition can be categorized as either right bundle branch block (RBBB) or left bundle branch block (LBBB), depending on the affected side. Bundle branch block can result in a widened QRS complex on an electrocardiogram (ECG) and may be associated with underlying heart conditions, such as coronary artery disease, cardiomyopathy, or heart failure. Treatment depends on the underlying cause and may involve managing the associated cardiac condition and addressing any related symptoms.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bundle-branch-block
+cardiac dysrhythmia,698247007,CD,"Cardiac dysrhythmia, also known as arrhythmia, refers to an abnormal heart rhythm that can manifest as irregular, fast, or slow heartbeats. This condition can occur due to various factors, including underlying heart conditions, electrolyte imbalances, medications, or lifestyle factors. Dysrhythmias can lead to symptoms such as palpitations, dizziness, fainting, chest discomfort, or shortness of breath. Treatment options may include medications, lifestyle modifications, and in some cases, medical procedures to restore the heart's normal rhythm and prevent associated complications.",https://www.heart.org/en/health-topics/arrhythmia
+chronic atrial fibrillation,426749004,CAF,"Chronic atrial fibrillation is a type of cardiac arrhythmia characterized by a long-term, irregular, and often rapid heartbeat originating from the heart's upper chambers (the atria). Unlike paroxysmal atrial fibrillation, which is self-terminating within 7 days, chronic atrial fibrillation persists beyond this timeframe. This condition can lead to symptoms such as palpitations, shortness of breath, weakness, and fatigue, and it can increase the risk of complications such as stroke and heart failure. Management may involve a combination of medications to control heart rate and rhythm, blood thinners to reduce the risk of stroke, and other interventions tailored to the individual's specific health needs.",https://www.heart.org/en/health-topics/atrial-fibrillation
+chronic myocardial ischemia,413844008,CMI,"Chronic myocardial ischemia refers to a long-term condition characterized by reduced blood flow to the heart muscle, leading to an inadequate oxygen supply to meet the heart's demands. This condition often arises from the narrowing or blockage of coronary arteries due to atherosclerosis, a buildup of plaque in the arteries. Chronic myocardial ischemia can result in symptoms such as chest pain or discomfort, known as angina, especially during physical activity or periods of stress. Management typically involves medications to improve blood flow and reduce the workload on the heart, lifestyle modifications, and, in some cases, invasive procedures such as angioplasty or coronary artery bypass surgery.",https://www.heart.org/en/health-topics/heart-attack/angina-chest-pain
+complete heart block,27885002,CHB,"Complete heart block, also known as third-degree atrioventricular block, is a serious cardiac condition in which the electrical signals between the heart's upper chambers (the atria) and lower chambers (the ventricles) are completely blocked. This results in an independent and potentially slower heart rate in the ventricles compared to the atria. Complete heart block can lead to symptoms such as fatigue, dizziness, fainting, and shortness of breath. It can be caused by various factors, including heart disease, certain medications, or aging. Treatment often involves the implantation of a pacemaker to regulate the heart rate and ensure the proper coordination of heart contractions.",https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/atrioventricular-av-block
+complete right bundle branch block,713427006,CRBBB,"Complete right bundle branch block (RBBB) is a cardiac conduction disorder characterized by the complete blockage of electrical impulses along the right bundle branch of the heart's conduction system. This condition can be identified on an electrocardiogram (ECG) by specific changes in the QRS complex. While it may not always cause noticeable symptoms, it can sometimes be associated with underlying heart conditions such as pulmonary hypertension, heart failure, or certain congenital heart defects. Management typically involves addressing the underlying cause and monitoring for any potential progression of heart-related complications.",https://www.heart.org/en/health-topics/heart-failure/what-is-heart-failure
+congenital incomplete atrioventricular heart block,204384007,CIAHB,"Congenital incomplete atrioventricular heart block is a cardiac condition present at birth, characterized by a partial blockage of the electrical impulses between the heart's upper chambers (the atria) and lower chambers (the ventricles). This condition can lead to slower or irregular heart rhythms and may sometimes manifest with symptoms such as fatigue, dizziness, or fainting. It can be caused by certain maternal autoimmune conditions or may occur without any identifiable cause. Management often involves close monitoring by a cardiologist, and in some cases, the implantation of a pacemaker may be necessary to regulate the heart rate and ensure proper cardiac function.",https://www.cdc.gov/ncbddd/heartdefects/index.html
+coronary heart disease,53741008,CHD,"Coronary heart disease (CHD), also known as coronary artery disease, is a condition characterized by the narrowing or blockage of the coronary arteries that supply blood to the heart muscle. This narrowing is often caused by the buildup of plaque, consisting of cholesterol and other substances, on the inner walls of the arteries. CHD can lead to symptoms such as chest pain or discomfort, known as angina, as well as shortness of breath and fatigue. It can also result in serious complications such as heart attacks or heart failure. Management may involve lifestyle changes, medications, and in some cases, medical procedures such as angioplasty or bypass surgery.",https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/coronary-artery-disease
+decreased qt interval,77867006,SQT,"A decreased QT interval on an electrocardiogram (ECG) refers to a shortened duration between the start of the Q wave and the end of the T wave, which indicates the time it takes for the heart's ventricles to contract and then recover. A shortened QT interval can be associated with various factors, including certain medications, electrolyte imbalances, or genetic conditions. It can sometimes be benign, but in some cases, it may increase the risk of arrhythmias, especially ventricular tachycardia. Evaluation by a healthcare professional is essential to determine the underlying cause and to assess the need for any further monitoring or treatment.", consult your healthcare provider or refer to reliable medical resources for further understanding and guidance.
+diffuse intraventricular block,82226007,DIB,"Diffuse intraventricular block refers to a conduction disorder within the ventricles of the heart that can affect the normal spread of electrical impulses responsible for coordinating the heart's contractions. This condition can be identified on an electrocardiogram (ECG) by specific changes in the QRS complex. Diffuse intraventricular block can be associated with underlying heart conditions such as cardiomyopathy, coronary artery disease, or other structural heart issues. Management typically involves addressing the underlying cause and monitoring for any potential progression of heart-related complications.",it is advisable to consult with a healthcare professional or a cardiologist who can provide you with the most up-to-date and relevant information based on your specific medical history and condition. 
+early repolarization,428417006,ERe,"Early repolarization is a pattern often seen on an electrocardiogram (ECG) characterized by an upwardly convex ST-segment elevation with or without prominent J-point elevation, usually in the precordial leads. It is typically considered a normal variant but can sometimes be associated with an increased risk of cardiac events such as ventricular arrhythmias or sudden cardiac death, especially in certain high-risk populations. Evaluation by a healthcare professional is necessary to assess the significance of early repolarization and determine the need for any further monitoring or treatment.", consult your healthcare provider or refer to reputable medical resources for further understanding and guidance.
+fusion beats,13640000,FB,"Fusion beats are a type of cardiac rhythm observed on an electrocardiogram (ECG) that results from the simultaneous activation of the heart's ventricles by two different pathways. This phenomenon occurs when an impulse from the heart's normal conduction pathway and an ectopic impulse coincide, resulting in a combined QRS complex on the ECG. Fusion beats can sometimes be seen in individuals with certain types of cardiac arrhythmias or other heart conditions. Evaluation by a healthcare professional is essential to determine the specific implications of fusion beats and assess the need for any further monitoring or treatment.",
+heart failure,84114007,HF,"Heart failure is a chronic condition characterized by the heart's inability to pump blood efficiently to meet the body's demands. This condition can occur when the heart muscles become weakened or damaged, leading to reduced cardiac output and inadequate blood circulation. Heart failure can manifest with symptoms such as fatigue, shortness of breath, swelling in the legs, and persistent coughing. It can be caused by various factors, including coronary artery disease, high blood pressure, or certain underlying heart conditions. Management typically involves medications, lifestyle modifications, and in some cases, medical devices or surgical interventions to improve heart function and quality of life",https://www.heart.org/en/health-topics/heart-failure
+heart valve disorder,368009,HVD,"A heart valve disorder refers to a condition where one or more of the heart's valves do not function properly, leading to impaired blood flow through the heart. This can result from various causes, including congenital heart defects, infections, or age-related degeneration. Depending on the specific valve affected, symptoms can include shortness of breath, fatigue, chest pain, palpitations, or swelling in the ankles, feet, or abdomen. Treatment may involve medications to manage symptoms, surgical repair, or replacement of the affected valve, depending on the severity of the condition and the impact on overall heart function.",https://www.heart.org/en/health-topics/heart-valve-problems-and-disease
+high t-voltage,251259000,HTV,"High T-voltage is an electrocardiographic finding characterized by an abnormally tall T-wave amplitude on the ECG. This finding can sometimes indicate underlying cardiac conditions such as myocardial hypertrophy, electrolyte imbalances, or certain genetic disorders affecting the heart's electrical activity. Evaluation by a healthcare professional is essential to determine the significance of high T-voltage and to assess the need for any further monitoring or treatment.", consult your healthcare provider or refer to reliable medical resources for further understanding and guidance
+idioventricular rhythm,49260003,IR,"Idioventricular rhythm is a type of cardiac rhythm that originates from the ventricles when the heart's normal pacemaker, the sinoatrial node, fails to generate or conduct electrical impulses effectively. This rhythm often presents as a slow, regular heartbeat, typically ranging from 20 to 40 beats per minute. Idioventricular rhythm can be seen in certain situations such as during a heart attack or in the setting of conduction system abnormalities. While it may not always cause symptoms, it can sometimes lead to dizziness, weakness, or fainting. Management involves addressing the underlying cause and providing appropriate supportive care as needed.","consult your healthcare provider or refer to reputable medical resources for further understanding and guidance.
+
+
+
+"
+incomplete left bundle branch block,251120003,ILBBB,"Incomplete left bundle branch block is a cardiac conduction disorder characterized by a delay or blockage of electrical impulses along the left bundle branch of the heart's conduction system. This condition can be identified on an electrocardiogram (ECG) by specific changes in the QRS complex. While it may not always cause noticeable symptoms, it can sometimes be associated with underlying heart conditions such as coronary artery disease, cardiomyopathy, or hypertension. Management typically involves addressing the underlying cause and monitoring for any potential progression of heart-related complications.",
+incomplete right bundle branch block,713426002,IRBBB,"Incomplete right bundle branch block is a cardiac conduction disorder characterized by a delay or blockage of electrical impulses along the right bundle branch of the heart's conduction system. While it may not always cause noticeable symptoms, it can sometimes be associated with underlying heart conditions such as pulmonary hypertension, heart failure, or certain congenital heart defects.",Link to Incomplete Right Bundle Branch Block Information
+indeterminate cardiac axis,251200008,ICA,Indeterminate cardiac axis refers to an electrocardiographic finding where the cardiac axis cannot be precisely determined due to the orientation of the electrical activity of the heart. Further evaluation by a healthcare professional may be necessary to assess the significance of an indeterminate cardiac axis.,Consult your healthcare provider or refer to reliable medical resources for further understanding and guidance
+inferior ischaemia,425419005,IIs,"Inferior ischemia refers to a condition where there is reduced blood flow to the inferior wall of the heart, often due to narrowing or blockage of the coronary arteries supplying that area. Prompt medical attention is necessary to evaluate and manage any potential complications associated with inferior ischemia.",Link to Inferior Ischemia Information
+inferior ST segment depression,704997005,ISTD,Inferior ST segment depression is an electrocardiographic finding characterized by a downward displacement of the ST segment in leads that reflect the electrical activity of the inferior wall of the heart. Further evaluation by a healthcare professional is essential to determine the significance and appropriate management.,Consult your healthcare provider or refer to reputable medical resources for further understanding and guidance
+junctional escape,426995002,JE,"Junctional escape refers to a cardiac rhythm where the atrioventricular node or the bundle of His becomes the heart's primary pacemaker, taking over the function when the heart's natural pacemaker, the sinoatrial node, fails. It can lead to a slower heart rate and may sometimes be seen in individuals with certain cardiac conduction disorders or during specific medical conditions.",Consult your healthcare provider or refer to reliable medical resources for further understanding and guidance
+junctional premature complex,251164006,JPC,"Junctional premature complex is a premature heartbeat that arises from the atrioventricular junction rather than the sinoatrial node. While it may not always indicate a serious underlying condition, further evaluation by a healthcare professional is necessary to assess the specific implications of junctional premature complexes.",Consult your healthcare provider or refer to reputable medical resources for further understanding and guidance
+junctional tachycardia,426648003,JTach,"Junctional tachycardia is a rapid heart rhythm originating from the atrioventricular junction, leading to an increased heart rate. Management typically involves identifying and addressing the underlying cause, as well as controlling the heart rate to reduce any associated symptoms or complications.",Consult your healthcare provider or refer to reliable medical resources for further understanding and guidance
+lateral ischaemia,425623009,LIs,"Lateral ischemia refers to a condition where there is reduced blood flow to the lateral wall of the heart, often due to narrowing or blockage of the coronary arteries supplying that area. Timely medical assessment is crucial to evaluate and manage any potential complications associated with lateral ischemia.",Link to Lateral Ischemia Information
+left anterior fascicular block,445118002,LAnFB,"Left anterior fascicular block is a cardiac conduction disorder characterized by delayed or blocked electrical impulses along the left anterior fascicle of the heart's conduction system. While it may not always cause noticeable symptoms, it can sometimes be associated with certain underlying heart conditions. Management typically involves addressing the underlying cause and monitoring for any potential progression of heart-related complications.	",Consult your healthcare provider or refer to reputable medical resources for further understanding and guidance
+left atrial abnormality,253352002,LAA,,
+left atrial enlargement,6.77E+13,LAE,,
+left atrial hypertrophy,446813000,LAH,,
+left axis deviation,39732003,LAD,,
+left bundle branch block,164909002,LBBB,,
+left posterior fascicular block,445211001,LPFB,,
+left ventricular hypertrophy,164873001,LVH,,
+left ventricular strain,370365005,LVS,,
+low qrs voltages,251146004,LQRSV,,
+mobitz type i wenckebach atrioventricular block,54016002,MoI,,
+myocardial infarction,164865005,MI,,
+myocardial ischemia,164861001,MIs,,
+nonspecific intraventricular conduction disorder,698252002,NSIVCB,,
+nonspecific st t abnormality,428750005,NSSTTA,,
+old myocardial infarction,164867002,OldMI,,
+pacing rhythm,10370003,PR,,
+paired ventricular premature complexes,251182009,VPVC,,
+paroxysmal atrial fibrillation,282825002,PAF,,
+paroxysmal supraventricular tachycardia,67198005,PSVT,,
+paroxysmal ventricular tachycardia,425856008,PVT,,
+premature atrial contraction,284470004,PAC,,
+premature ventricular contractions,427172004,PVC,,
+ventricular premature beats,17338001,VPB,,
+prolonged pr interval,164947007,LPR,,
+prolonged qt interval,111975006,LQT,,
+qwave abnormal,164917005,QAb,,
+r wave abnormal,164921003,RAb,,
+rapid atrial fibrillation,314208002,RAF,,
+right atrial abnormality,253339007,RAAb,,
+right atrial hypertrophy,446358003,RAH,,
+right axis deviation,47665007,RAD,,
+right bundle branch block,59118001,RBBB,"Right bundle branch block (RBBB) is an electrocardiogram finding that occurs when the physiologic electrical conduction system of the heart, specifically in the His-Purkinje system, is altered or interrupted resulting in a widened QRS and electrocardiographic vector changes. The bundle of His divides in the interventricular septum into the right and left bundle branches. Initially, the right bundle branch off of the bundle of His travels down the interventricular septum near the endocardium. It then dives deeper into the muscular layer before re-emerging near the endocardium again. The right bundle branch receives most of its blood supply from the anterior descending coronary artery. It also receives collateral circulation from the right or left circumflex coronary arteries, depending on the dominance of the heart.","https://www.ncbi.nlm.nih.gov/books/NBK507872/#:~:text=Right%20bundle%20branch%20block%20(RBBB,QRS%20and%20electrocardiographic%20vector%20changes."
+right ventricular hypertrophy,89792004,RVH,,
+s t changes,55930002,STC,,
+shortened pr interval,49578007,SPRI,,
+sinoatrial block,65778007,SAB,,
+sinus arrhythmia,427393009,SA,,
+sinus bradycardia,426177001,SB,,
+sinus node dysfunction,60423000,SND,,
+sinus rhythm,426783006,NSR,"Normal sinus rhythm (NSR) is the rhythm that originates from the sinus node and describes the characteristic rhythm of the healthy human heart. The rate in NSR is generally regular but will vary depending on autonomic inputs into the sinus node. When there is irregularity in the sinus rate, it is termed ""sinus arrhythmia."" A sinus rhythm faster than the normal range is called a sinus tachycardia, while a slower rate is called a sinus bradycardia.","https://www.uptodate.com/contents/normal-sinus-rhythm-and-sinus-arrhythmia/print#:~:text=Normal%20sinus%20rhythm%20(NSR)%20is,inputs%20into%20the%20sinus%20node."
+sinus tachycardia,427084000,STach,,
+st depression,429622005,STD,,
+st elevation,164931005,STE,,
+st interval abnormal,164930006,STIAb,,
+supraventricular bigeminy,251168009,SVB,,
+supraventricular premature beats,63593006,SVPB,,
+supraventricular tachycardia,426761007,SVT,,
+suspect arm ecg leads reversed,251139008,ALR,,
+t wave abnormal,164934002,TAb,,
+t wave inversion,59931005,TInv,,
+transient ischemic attack,266257000,TIA,,
+u wave abnormal,164937009,UAb,,
+ventricular bigeminy,11157007,VBig,,
+ventricular ectopics,164884008,VEB,,
+ventricular escape beat,75532003,VEsB,,
+ventricular escape rhythm,81898007,VEsR,,
+ventricular fibrillation,164896001,VF,,
+ventricular flutter,111288001,VFL,,
+ventricular hypertrophy,266249003,VH,,
+ventricular pacing pattern,251266004,VPP,,
+ventricular pre excitation,195060002,VPEx,,
+ventricular tachycardia,164895002,VTach,,
+ventricular trigeminy,251180001,VTrig,,
+wandering atrial pacemaker,195101003,WAP,,
+wolff parkinson white pattern,74390002,WPW,,
