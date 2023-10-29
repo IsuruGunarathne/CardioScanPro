@@ -20,7 +20,8 @@ from tensorflow.keras.models import load_model
 
 # Title
 st.title("Cardio Scan Pro")
-st.write("This is Cardio Scan Pro")
+st.write("Welcome to Cardio Scan Pro. A tool to help you diagnose heart diseases.")
+st.write("Please upload the ECG recording and header files below.")
 
 
 # anomalies df
@@ -174,3 +175,7 @@ if mat_file is not None and hea_file is not None:
     st.write("Here are some additional detials about " + str(details.iloc[0, 0]))
     st.write(details.iloc[0, 3])
     st.write("For more detials visit " + str(details.iloc[0, 4]))
+
+st.write("Made with ❤️ by Team 4")
+st.write("© 2023 Team 4. All rights reserved.")
+st.write("Amila, Isuru, Sulakshi")
