@@ -4,6 +4,7 @@ from tensorflow.keras.models import Model
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.model_selection import StratifiedKFold,KFold
+from tensorflow.keras.constraints import MaxNorm
 
 
 def residual_block(x, filters, kernel_size=3, stride=1):
@@ -83,42 +84,20 @@ def ResNet_model(input_shape,num_classes):
     
     return model
 
-def model_train(X_train,y_train,model,folds,_epochs):
 
-    # Define the number of folds (k)
-    k = folds
+def ResNet_model_min_layers(input_shape,num_classes):
+    inputs = Input(shape=input_shape)
+    x = Conv1D(64, 7, strides=2, padding='same')(inputs)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
 
-    # Initialize StratifiedKFold
-    # skf = StratifiedKFold(n_splits=k, shuffle=True, random_state=42)
+    # Add residual blocks
+    x = residual_block(x, 64, stride=1)
+    x = residual_block(x, 64, stride=1)
 
-    # Initialize KFold
-    kf = KFold(n_splits=k, shuffle=True, random_state=42)
+    x = GlobalAveragePooling1D()(x)
+    outputs = Dense(num_classes, activation='sigmoid')(x)
     
-    # Compile the model
-    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    model = Model(inputs, outputs)
     
-    # Define the EarlyStopping callback
-    early_stopping = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
-
-    # Initialize a list to store validation results
-    validation_accuracy_results = []
-    validation_loss_results = []
-    
-    # Loop through the folds
-    for train_index, val_index in kf.split(X_train, y_train):
-        
-        X_train_fold, X_val_fold = X_train[train_index], X_train[val_index]
-        
-        y_train_fold, y_val_fold = y_train[train_index], y_train[val_index]
-
-        # Create and compile your model (if not already done)
-
-        # Train the model on X_train_fold and y_train_fold
-        hsitory = model.fit(X_train_fold, y_train_fold, epochs=_epochs, batch_size=32,validation_data=(X_val_fold, y_val_fold), callbacks=[early_stopping])
-
-        # Evaluate the model on X_val_fold and store the validation results
-        val_loss, val_accuracy = model.evaluate(X_val_fold, y_val_fold)
-        validation_accuracy_results.append(val_accuracy)
-        validation_loss_results.append(val_loss)
-    
-    return model,validation_accuracy_results,validation_loss_results
+    return model

@@ -1,13 +1,14 @@
-import utils
+import utils.utils as utils
 import pandas as pd
 import random
 import numpy as np
 from sklearn.model_selection import train_test_split
-import model as mdl
+import models.CNN as mdl
+from testing.ClassificationReport import ClassificationReport
 
-data = pd.read_csv('Dx_map.csv')
+data = pd.read_csv('data/Dx_map.csv')
 
-df = utils.create_dataframes('training')
+df = utils.create_dataframes('training') # here the file path for the data should be given
 
 
 srce_files_df = ['cpsc_2018_df', 'cpsc_2018_extra_df', 'georgia_df', 'ptb_df', 'ptb-xl_df', 'st_petersburg_incart_df']
@@ -63,3 +64,11 @@ trained_model,accuracy_results_loss_results = mdl.model_train(X_train,y_train,re
 
 # Saving the model
 trained_model.save('CardioScanPro_resnet_model.h5')
+
+
+# testing the model
+classificarion_report = ClassificationReport(X_test,y_test,trained_model)
+
+# Printing the classification report
+print("=============== Classification Report ===================")
+print(classificarion_report)
