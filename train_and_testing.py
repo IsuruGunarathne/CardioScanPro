@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import models.CNN as mdl
 from testing.ClassificationReport import ClassificationReport
+from tensorflow.keras.models import load_model
 
 data = pd.read_csv('data/Dx_map.csv')
 
@@ -65,6 +66,8 @@ trained_model,accuracy_results_loss_results = mdl.model_train(X_train,y_train,re
 # Saving the model
 trained_model.save('CardioScanPro_resnet_model.h5')
 
+# Loading the model
+trained_model = load_model('CardioScanPro_resnet_model.h5')
 
 # testing the model
 classificarion_report = ClassificationReport(X_test,y_test,trained_model)
